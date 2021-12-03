@@ -26,12 +26,6 @@ namespace View_PBL4.Controllers
 
             return View();
         }
-        public ActionResult layoutstatic()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
         public ActionResult User()
         {
             ViewBag.Message = "Your contact page.";
