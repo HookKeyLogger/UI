@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -124,6 +132,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FileDetail.cs">
+      <DependentUpon>PBL4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Folder.cs">
+      <DependentUpon>PBL4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PBL4.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PBL4.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PBL4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PBL4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PBL4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PBL4.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>PBL4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>PBL4.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -143,8 +178,30 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Img\05_01_2021\I_01.jpg" />
+    <Content Include="Img\05_01_2021\I_02.jpg" />
+    <Content Include="Img\05_02_2021\I_03.jpg" />
+    <Content Include="Img\05_02_2021\I_04.jpg" />
+    <Content Include="Img\05_02_2021\I_05.jpg" />
+    <Content Include="Models\PBL4.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PBL4.Context.cs</LastGenOutput>
+      <DependentUpon>PBL4.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\PBL4.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PBL4.edmx</DependentUpon>
+      <LastGenOutput>PBL4.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\PBL4.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PBL4.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PBL4.edmx.diagram">
+      <DependentUpon>PBL4.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -156,6 +213,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Text\07_06_2021\KeyBoard.txt" />
+    <Content Include="Text\07_06_2021\ProcessActivity.txt" />
+    <Content Include="Text\07_07_2021\Test07.txt" />
+    <Content Include="Text\07_07_2021\Test07_1.txt" />
     <Content Include="Views\Home\charts.html" />
     <Content Include="Views\Home\layout-sidenav-light.html" />
     <Content Include="Views\Home\login.html" />
@@ -179,10 +240,13 @@
     <Content Include="Views\Home\layoutstatic.cshtml" />
     <Content Include="Views\Home\User.cshtml" />
     <Content Include="Views\Home\Data.cshtml" />
+    <Content Include="Views\Home\Image_View.cshtml" />
+    <Content Include="Views\Home\Text_View.cshtml" />
+    <Content Include="Views\Home\Change_Folder.cshtml" />
+    <Content Include="Views\Home\Change_Folder_txt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -196,6 +260,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

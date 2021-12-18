@@ -1,0 +1,7 @@
+
+
+NameProcess: key
+MainWindownTitle: E:\APP_Keylogger\key\bin\Debug\key.exe
+TimeExcute: 29-11-2021 09::57::14 CH
+Path: E:\APP_Keylogger\key\bin\Debug\key.exe
+
