@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
@@ -29,18 +31,34 @@ namespace View_PBL4.Controllers
 
             return View();
         }
-        public ActionResult User()
+        public ActionResult User(string id)
         {
-            ViewBag.Message = "Your contact page.";
-            return View();
+            //System.Diagnostics.Debug.WriteLine(id);
+            if (id == "shudown")
+            { }
+            if (id == "reset")
+            { }
+            if(id == "sendimage")
+            { }
+            if(id == "null")
+            { }
+            PBL4Entities db = new PBL4Entities();
+            //Console.WriteLine(id);
+            return View(db.Users.ToList());
         }
-        public ActionResult Data()
+        public ActionResult Data_Mode()
         {
-            ViewBag.Message = "Your contact page.";
-            return View();
+            PBL4Entities db = new PBL4Entities();
+            return View(db.Users.ToList());
+        }
+        public ActionResult Data1()
+        {
+            PBL4Entities db = new PBL4Entities();
+            return View(db.Folders.ToList());
         }
         public ActionResult Image_View(string id)
-        {   
+        {
+            System.Diagnostics.Debug.WriteLine(id);
             PBL4Entities db = new PBL4Entities();
             List<FileDetail> result = new List<FileDetail>();
             result = db.FileDetails.Where(p => p.FolderID == id).ToList();
@@ -53,19 +71,20 @@ namespace View_PBL4.Controllers
             result = db.FileDetails.Where(p => p.FolderID == id).ToList();
             return View(result);
         }
-        public ActionResult Change_Folder()
+        public ActionResult Change_Folder(string id)
         {
             PBL4Entities db = new PBL4Entities();
             List<Folder> result = new List<Folder>();
-            result = db.Folders.Where(p => p.Type == "image").ToList();
+            result = db.Folders.Where(p => p.Type == "image" && p.UserID == id).ToList();
             return View(result);
         }
-        public ActionResult Change_Folder_txt()
+        public ActionResult Change_Folder_txt(string id)
         {
             PBL4Entities db = new PBL4Entities();
             List<Folder> result = new List<Folder>();
-            result = db.Folders.Where(p => p.Type == "txt").ToList();
+            result = db.Folders.Where(p => p.Type == "txt" && p.UserID == id).ToList();
             return View(result);
         }
+        
     }
 }

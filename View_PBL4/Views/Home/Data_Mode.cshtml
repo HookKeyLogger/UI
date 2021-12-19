@@ -1,11 +1,9 @@
-﻿@model IEnumerable<View_PBL4.Models.Folder>
-
+﻿@model IEnumerable<View_PBL4.Models.User>
 @{
     Layout = null;
 }
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -13,30 +11,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Image</title>
+    <title>Data</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="~/Content/css/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <style>
-        .button1 {
-            background-color: white;
-            box-shadow: 0 5px 0 darkred;
-            color: #333333;
+        .button {
+            background-color: #333333;
+            color: #999999;
             padding: 0.3em 0.8em;
-            position: relative;
             text-decoration: none;
             float: center;
         }
 
-            .button1:hover {
-                background-color: #B0E0E6;
-                color: #333333;
-                cursor: pointer;
+            .button:hover {
+                color: white;
             }
-        .card-body {
-            display: flex;
-            flex-wrap: wrap;
-        }
     </style>
 </head>
 <body class="sb-nav-fixed">
@@ -95,21 +85,50 @@
                     <h1 class="mt-4">Data</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="~/Home/Index">Home Page</a></li>
-                        <li class="breadcrumb-item active"><a href="~/Home/Data">Data</a></li>
-                        <li class="breadcrumb-item active">Folder</li>
+                        <li class="breadcrumb-item active">Data</li>
                     </ol>
 
                     <div class="card mb-4">
+
                         <div class="card-body">
-                            @{
-                                int i = 0;
-                                foreach (var item in Model)
-                                {
-                                    <div class="folder_image" index="@i"><a href="~/Home/Image_View/@item.FolderID" class="button1">@item.FolderID</a>&emsp;</div><br/>
-                                    <br />
-                                    i++;
-                                }
-                            }
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th>Stt</th>
+                                        <th>Name</th>
+                                        <th>Image</th>
+                                        <th>Text</th>
+                                        <th>Collect</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Stt</th>
+                                        <th>Name</th>
+                                        <th>Image</th>
+                                        <th>Text</th>
+                                        <th>Collect</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @{
+                                        int i = 0;
+                                        int stt = 1;
+                                        foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@stt</td>
+                                                <td>@item.UserID</td>
+                                                <td><a href="~/Home/Change_Folder/@item.UserID" class="button">img</a></td>
+                                                <td><a href="~/Home/Change_Folder_txt/@item.UserID" class="button">text</a></td>
+                                                <td>Collect</td>
+                                            </tr>
+                                            i++;
+                                            stt++;
+                                        }
+                                    }
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

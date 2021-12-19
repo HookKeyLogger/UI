@@ -178,6 +178,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Img\02_02_2001\I_06.jpg" />
+    <Content Include="Img\02_02_2001\I_07.jpg" />
     <Content Include="Img\05_01_2021\I_01.jpg" />
     <Content Include="Img\05_01_2021\I_02.jpg" />
     <Content Include="Img\05_02_2021\I_03.jpg" />
@@ -213,6 +215,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Text\01_01_2001\Test01.txt" />
+    <Content Include="Text\01_01_2001\Test01_1.txt" />
     <Content Include="Text\07_06_2021\KeyBoard.txt" />
     <Content Include="Text\07_06_2021\ProcessActivity.txt" />
     <Content Include="Text\07_07_2021\Test07.txt" />
@@ -239,11 +243,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\layoutstatic.cshtml" />
     <Content Include="Views\Home\User.cshtml" />
-    <Content Include="Views\Home\Data.cshtml" />
     <Content Include="Views\Home\Image_View.cshtml" />
     <Content Include="Views\Home\Text_View.cshtml" />
     <Content Include="Views\Home\Change_Folder.cshtml" />
     <Content Include="Views\Home\Change_Folder_txt.cshtml" />
+    <Content Include="Views\Home\Data_Mode.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
